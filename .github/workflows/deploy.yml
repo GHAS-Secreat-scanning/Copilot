@@ -19,6 +19,8 @@ jobs:
       - name: Deploy Code to VM using Password
         run: |
           sshpass -p "${{ secrets.VM_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.VM_USER }}@${{ secrets.VM_HOST }} << 'EOF'
-            cd /home/shravya/Copilot/employee-management-app
-            git pull origin main
+            cd /home/shravya
+            rm -rf Copilot  # Remove existing app folder
+            git clone https://github.com/GHAS-Secreat-scanning/Copilot.git
+            cd Copilot/employee-management-app
           EOF
