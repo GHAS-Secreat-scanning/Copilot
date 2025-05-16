@@ -5,14 +5,13 @@ updates:
     directory: "/employee-management-app"  # Location of your requirements file
     schedule:
       interval: "weekly"  # You can choose daily, weekly, or monthly
-    versioning-strategy: "increase"  # Keep versions updated (use "increase" for newer versions)
 
   # For GitHub Actions dependencies (like actions/checkout)
   - package-ecosystem: "github-actions"
     directory: "/"  # Root directory for GitHub Actions workflows
     schedule:
       interval: "weekly"  # You can choose daily, weekly, or monthly
-    versioning-strategy: "increase"  # Keep versions updated for GitHub Actions
+
 #version: 2: Specifies the version of the Dependabot configuration file format.
 #updates: Lists the updates for different ecosystems (like pip and github-actions).
 #package-ecosystem: Specifies which ecosystem to monitor, such as pip for Python packages or github-actions for GitHub Actions workflows.
