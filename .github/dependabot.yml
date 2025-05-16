@@ -1,0 +1,23 @@
+version: 2
+updates:
+  # For Python (pip) dependencies in requirements.txt
+  - package-ecosystem: "pip"
+    directory: "/employee-management-app"  # Location of your requirements file
+    schedule:
+      interval: "weekly"  # You can choose daily, weekly, or monthly
+    versioning-strategy: "increase"  # Keep versions updated (use "increase" for newer versions)
+
+  # For GitHub Actions dependencies (like actions/checkout)
+  - package-ecosystem: "github-actions"
+    directory: "/"  # Root directory for GitHub Actions workflows
+    schedule:
+      interval: "weekly"  # You can choose daily, weekly, or monthly
+    versioning-strategy: "increase"  # Keep versions updated for GitHub Actions
+#version: 2: Specifies the version of the Dependabot configuration file format.
+#updates: Lists the updates for different ecosystems (like pip and github-actions).
+#package-ecosystem: Specifies which ecosystem to monitor, such as pip for Python packages or github-actions for GitHub Actions workflows.
+#directory: Specifies where the requirements.txt (or other dependency files) are located. In your case, it's within the employee-management-app folder.
+#schedule: Defines how often Dependabot checks for updates (e.g., weekly, daily, or monthly).
+#versioning-strategy: Defines the versioning strategy, such as increasing versions, allowing lockfile-only updates, etc.
+#For pip (Flask, Werkzeug): The configuration will monitor the dependencies listed in the requirements.txt file located in the employee-management-app directory and check for updates on a weekly basis.
+#For github-actions (actions/checkout): The configuration will monitor and check for updates to your GitHub Actions workflows (e.g., deploy.yml) weekly.
